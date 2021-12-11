@@ -15,7 +15,7 @@ interface HomeProps {
 export default function Home({ product }: HomeProps) {
   return (
     <>
-      <Head>
+      <Head key="home">
         <title>Home | ig.news</title>
       </Head>
 
@@ -49,7 +49,7 @@ export const getStaticProps: GetStaticProps = async () => {
     amount: new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'USD'
-    }).format(price.unit_amount / 100)
+    }).format(price.unit_amount / 100) // porque esta en centavos para no trabajar con decimales.
   }
 
   return {
